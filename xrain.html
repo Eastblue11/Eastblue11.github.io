@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		body{
+			background-color: pink;
+		}
+		
+		*{
+			padding: 0;margin: 0;
+		}
+			canvas{
+				background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497371979262&di=287f371b987bcd707255e1d307faa014&imgtype=0&src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2F08e59ca0be93d6d5945705e9aa5f966e1b7e3889.jpg) no-repeat ;
+				background-size: 600px 500px;
+				border: 2px solid gray;
+				position: absolute;
+				left: 50%;
+				margin-left: -250px;
+			}
+			audio{
+				width: 545px;
+				position: absolute;
+				top: 505px;left: 432px;
+			}
+			
+		</style>
+78	<body>
+		<canvas id="canvasId" width="540" height="500"></canvas>
+		<audio  controls>
+			<source src="陶喆,蔡依林 - 今天你要嫁给我.mp3"></source>
+		</audio>
+		
+	</body>
+</html>
+		<script>
+		var ct=document.getElementById('canvasId').getContext('2d')
+			//随机函数
+			function random(max,min){
+				return parseInt(Math.random()*(max-min)+min)
+			}
+			
+			
+			//dropRain
+			function dropRain(num){
+				for(n=0;n<num;n++){
+					
+				
+				var x=random( 540,0)
+				var y=random(500,0)
+			
+				//绘制线条
+				ct.beginPath()
+				ct.moveTo(x,y)
+				ct.lineTo(x-6,y+8)
+				ct.strokeStyle='cyan'
+				ct.stroke()
+				ct.closePath()
+				}
+			}
+			
+			
+			
+			
+			
+			function rain(){
+				//创建计时器
+				var rainInterval=setInterval(function(){
+					//清空画布   ,500)
+					ct.clearRect(0,0,540,500)
+					dropRain(190)
+				},30)
+			}
+			rain()
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+
+
+
+
+
+
+
+
+
+
